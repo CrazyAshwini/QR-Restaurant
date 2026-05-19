@@ -61,31 +61,49 @@ button {
   gap: 12px;
 }
 
-.app main {
-  padding: 24px;
-  flex: 1;
-}
+  .role-selector {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #4b5563;
+  }
 
-.page {
-  max-width: 1120px;
-  margin: 0 auto;
-}
+  .role-selector label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.hero {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 24px;
-  align-items: center;
-  padding: 32px 0;
-}
+  .role-selector select {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+  }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.82rem;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
+  .role-selector .role-note {
+    color: #6b7280;
+    font-size: 0.82rem;
+  }
+
+  .btn.small {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+
+  .unauthorized {
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .unauthorized a {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--accent);
+    text-decoration: underline;
+  }
 
 .hero h1 {
   font-size: clamp(2.5rem, 4vw, 4rem);
