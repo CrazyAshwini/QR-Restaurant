@@ -1,0 +1,25 @@
+{
+  "menu": {
+    "starters": {
+      "s1": { "name": "Calamari", "price": 12.99, "veg": false, "prep": 8 },
+      "s2": { "name": "Bruschetta", "price": 7.5, "veg": true, "prep": 5 }
+    },
+    "mains": {
+      "m1": { "name": "Margherita Pizza", "price": 14.99, "veg": true, "prep": 12 },
+      "m2": { "name": "Ribeye Steak", "price": 29.99, "veg": false, "prep": 18 }
+    },
+    "desserts": {
+      "d1": { "name": "Tiramisu", "price": 6.5, "veg": true, "prep": 6 }
+    },
+    "drinks": {
+      "dr1": { "name": "Coke", "price": 2.5, "veg": true, "prep": 1 },
+      "dr2": { "name": "Red Wine", "price": 8.0, "veg": true, "prep": 1 }
+    }
+  },
+  "tables": {
+    "table1": { "status": "free" },
+    "table2": { "status": "free" },
+    "table3": { "status": "occupied" }
+  },
+  "orders": {}
+}

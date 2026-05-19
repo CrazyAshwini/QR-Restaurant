@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "menu": {
+      ".read": true,
+      ".write": "auth !== null && root.child('staff').child(auth.uid).exists()"
+    },
+    "tables": {
+      ".read": true,
+      ".write": "auth !== null && (root.child('staff').child(auth.uid).exists() || (newData.exists() && newData.child('sessionId').val() === auth.uid))"
+    },
+    "orders": {
+      ".read": "auth !== null && root.child('staff').child(auth.uid).exists()",
+      ".write": "auth !== null"
+    },
+    "payments": {
+      ".read": "auth !== null && root.child('staff').child(auth.uid).exists()",
+      ".write": "auth !== null && root.child('staff').child(auth.uid).exists()"
+    },
+    "staff": {
+      ".read": "auth !== null && root.child('staff').child(auth.uid).exists()",
+      ".write": "auth !== null && root.child('staff').child(auth.uid).exists()"
+    }
+  }
+}
