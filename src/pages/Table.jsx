@@ -57,38 +57,73 @@ export default function Table() {
   }
 
   return (
-    <div className="page table">
-      <h2>Table {id} — Campus Cafe</h2>
-      <div style={{display:'flex',gap:24}}>
-        <div style={{flex:1}}>
-          <h3>Menu</h3>
+    <div className="page table table-page">
+      <header className="table-header">
+        <div>
+          <p className="eyebrow">Campus Dhaba</p>
+          <h2>Table {id} — Indian QR menu</h2>
+          <p className="hero-copy">Browse the menu, add your favorite dishes, and place your order directly from your table.</p>
+        </div>
+        <div className="table-status-card">
+          <h4>Table {id}</h4>
+          <p>Ready to order</p>
+          <div className="badge badge-accent">QR table service</div>
+        </div>
+      </header>
+
+      <div className="table-grid">
+        <section className="menu-panel">
           {Object.entries(menu).map(([cat, items]) => (
-            <div key={cat}>
-              <h4>{cat}</h4>
-              <ul>
+            <div key={cat} className="menu-category">
+              <h3>{cat}</h3>
+              <div className="menu-grid">
                 {Object.entries(items).map(([k, item]) => (
-                  <li key={k} style={{marginBottom:8}}>
-                    <strong>{item.name}</strong> — ${item.price.toFixed(2)}{' '}
-                    <button onClick={() => addToCart(cat, k)} style={{marginLeft:8}}>Add</button>
+                  <article key={k} className="menu-card">
+                    <img src={item.image} alt={item.name} />
+                    <div className="menu-card-body">
+                      <div className="menu-card-top">
+                        <span className="badge">{item.veg ? 'Veg' : 'Non-veg'}</span>
+                        <span>{item.prep} min</span>
+                      </div>
+                      <h4>{item.name}</h4>
+                      <div className="menu-card-footer">
+                        <strong>${item.price.toFixed(2)}</strong>
+                        <button onClick={() => addToCart(cat, k)} className="btn btn-small">Add</button>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <aside className="cart-panel">
+          <div className="cart-card">
+            <h3>Your Cart</h3>
+            {Object.keys(cart).length === 0 ? (
+              <div className="empty-state">Your cart is empty.</div>
+            ) : (
+              <ul className="cart-list">
+                {Object.entries(cart).map(([k, it]) => (
+                  <li key={k} className="cart-item">
+                    <div>
+                      <strong>{it.name}</strong>
+                      <div>x{it.qty}</div>
+                    </div>
+                    <div className="cart-actions">
+                      <span>${(it.qty * it.price).toFixed(2)}</span>
+                      <button onClick={() => removeFromCart(k)} className="btn btn-secondary btn-small">-</button>
+                    </div>
                   </li>
                 ))}
               </ul>
+            )}
+            <div className="cart-total">
+              <span>Total</span>
+              <strong>${Object.values(cart).reduce((sum, it) => sum + it.qty * it.price, 0).toFixed(2)}</strong>
             </div>
-          ))}
-        </div>
-        <aside style={{width:320,borderLeft:'1px solid #eee',paddingLeft:16}}>
-          <h3>Cart</h3>
-          {Object.keys(cart).length === 0 && <div>Cart is empty</div>}
-          <ul>
-            {Object.entries(cart).map(([k, it]) => (
-              <li key={k}>
-                {it.name} x{it.qty} — ${ (it.qty * it.price).toFixed(2)}{' '}
-                <button onClick={() => removeFromCart(k)} style={{marginLeft:8}}>-</button>
-              </li>
-            ))}
-          </ul>
-          <div style={{marginTop:12}}>
-            <button onClick={handlePlaceOrder} disabled={Object.keys(cart).length===0}>Place Order</button>
+            <button onClick={handlePlaceOrder} disabled={Object.keys(cart).length===0} className="btn btn-block">Place Order</button>
           </div>
         </aside>
       </div>

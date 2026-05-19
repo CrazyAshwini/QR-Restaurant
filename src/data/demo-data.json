@@ -1,19 +1,19 @@
 {
   "menu": {
     "starters": {
-      "s1": { "name": "Calamari", "price": 12.99, "veg": false, "prep": 8 },
-      "s2": { "name": "Bruschetta", "price": 7.5, "veg": true, "prep": 5 }
+      "s1": { "name": "Paneer Tikka", "price": 8.99, "veg": true, "prep": 10, "image": "https://images.unsplash.com/photo-1604908177522-8da46d8b4bd6?auto=format&fit=crop&w=800&q=80" },
+      "s2": { "name": "Samosa Chaat", "price": 6.5, "veg": true, "prep": 8, "image": "https://images.unsplash.com/photo-1523986371872-9d3ba2e2f15f?auto=format&fit=crop&w=800&q=80" }
     },
     "mains": {
-      "m1": { "name": "Margherita Pizza", "price": 14.99, "veg": true, "prep": 12 },
-      "m2": { "name": "Ribeye Steak", "price": 29.99, "veg": false, "prep": 18 }
+      "m1": { "name": "Butter Chicken", "price": 14.99, "veg": false, "prep": 15, "image": "https://images.unsplash.com/photo-1605478922700-6364d35c35b7?auto=format&fit=crop&w=800&q=80" },
+      "m2": { "name": "Vegetable Biryani", "price": 12.99, "veg": true, "prep": 18, "image": "https://images.unsplash.com/photo-1612874741167-5d3f44502a6f?auto=format&fit=crop&w=800&q=80" }
     },
     "desserts": {
-      "d1": { "name": "Tiramisu", "price": 6.5, "veg": true, "prep": 6 }
+      "d1": { "name": "Gulab Jamun", "price": 5.5, "veg": true, "prep": 6, "image": "https://images.unsplash.com/photo-1548943487-a2e4c4fedf04?auto=format&fit=crop&w=800&q=80" }
     },
     "drinks": {
-      "dr1": { "name": "Coke", "price": 2.5, "veg": true, "prep": 1 },
-      "dr2": { "name": "Red Wine", "price": 8.0, "veg": true, "prep": 1 }
+      "dr1": { "name": "Mango Lassi", "price": 3.5, "veg": true, "prep": 2, "image": "https://images.unsplash.com/photo-1521302080372-8d599f76d89d?auto=format&fit=crop&w=800&q=80" },
+      "dr2": { "name": "Masala Chai", "price": 2.5, "veg": true, "prep": 2, "image": "https://images.unsplash.com/photo-1521185496955-15097b20c5fe?auto=format&fit=crop&w=800&q=80" }
     }
   },
   "tables": {

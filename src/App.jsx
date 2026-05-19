@@ -43,7 +43,7 @@ function AppContent() {
   return (
     <div className="app">
       <header className="topbar">
-        <Link to="/">Campus Cafe</Link>
+        <Link to="/">Campus Dhaba</Link>
         <nav>
           {links.map((link) => (
             <Link key={link.path} to={link.path}>{link.label}</Link>
